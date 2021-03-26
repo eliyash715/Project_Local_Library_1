@@ -4,14 +4,15 @@ const getTotalBooksCount = (books) => {
   let total = 0;
   books.forEach((book) => total += 1);
   return total;
-    
 }
-//passed
+
+
+//passed 
 const getTotalAccountsCount = (accounts) => {
-  let count = 0;
-  accounts.forEach((account) => count ++);
-  return count;
-};
+  const totalAccount = accounts.reduce((acc, account) => acc + 1, 0);
+  return totalAccount;
+}
+
 //passed
 const getBooksBorrowedCount = (books) => { 
   let booksCurrentlyCheckOut = books.filter((book) => {
@@ -39,7 +40,7 @@ function getMostCommonGenres(books) {
     let sortedByGenre = mappedGenre.sort((a, b) => (b.count - a.count)) 
     return sortedByGenre.slice(0, 5); 
 }
-
+//passed
 function getMostPopularBooks(books) {    
     let result = [];
     
@@ -48,9 +49,10 @@ function getMostPopularBooks(books) {
     }, []);
     console.log(result);
     return result.sort((a,b) => b.count - a.count).slice(0,5);
-   // return topFive; 
+   
 }
 
+//passed
 const getMostPopularAuthors = (books, authors) => {
   let result = [];
   

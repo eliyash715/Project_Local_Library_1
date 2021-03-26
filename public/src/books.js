@@ -1,9 +1,16 @@
 // Note: Please do not change the name of the functions. The tests use those names to validate your code.
-//passed
-const findAuthorById = (authors, id) => {
-  let authorWithMatchingId = authors.find((author) => author.id === id);
-  return authorWithMatchingId;
+//passed with helper function
+const authorWithMatchId = (author, id) => author.id === id;
+
+function findAuthorById(authors, id) {
+  let result = null;
+  for(let i = 0; i < authors.length; i++) {
+    let author = authors[i];
+    if(authorWithMatchId(author, id)) result = author;
+    }
+  return result;
 }
+
 //passed
 function findBookById(books, id) {
   let matchingBookId = books.find((book) => book.id === id);

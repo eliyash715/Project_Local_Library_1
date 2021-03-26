@@ -1,8 +1,8 @@
 // Note: Please do not change the name of the functions. The tests use those names to validate your code.
 //passed
 const findAccountById = (accounts, id) => {
-  let accountWithMatchId = accounts.find((account) => account.id === id);
-  return accountWithMatchId;
+  let account = accounts.find(acc => acc.id === id);
+    return account;
 }
 //passed
 const sortAccountsByLastName = (accounts) => {
@@ -24,7 +24,7 @@ function getTotalNumberOfBorrows(account, books) {
 function getBooksPossessedByAccount(account, books, authors) {
   let filteredBook = books.filter((book) => {
     let filteredBorrowbook = book.borrows.filter((borrow) => borrow.id === account.id && borrow.returned === false);
-    return filteredBorrowbook .length > 0;
+    return filteredBorrowbook.length > 0;
   });
 let bookWithAuthor = filteredBook.map((book) => {
   let author = authors.find((auth) => auth.id === book.authorId);
